@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+  <link rel="stylesheet" href="/starter-code/index.css">
+  
+  <title>Frontend Mentor | Space tourism website</title>
+</head>
+<body>
+
+  <div class="container">
+
+    <div class="blur"></div>
+
+    <div class="backgrounds">
+      <img id="desktop-bg" src="/starter-code/assets/home/background-home-desktop.jpg" alt="desktop background">
+      <img id="mobile-bg" src="/starter-code/assets/home/background-home-mobile.jpg" alt="mobile background">
+      <img id="tablet-bg" src="/starter-code/assets/home/background-home-tablet.jpg" alt="tablet background">
+    </div>
+
+    <section class="navigation">
+
+      <div>
+        <img src="/starter-code/assets/shared/logo.svg" alt="logo">
+        <div id="horizontal-line"></div>
+
+        <img id="hamburger" src="/starter-code/assets/shared/icon-hamburger.svg" alt="hamburger icon">
+        <img id="close-btn" src="/starter-code/assets/shared/icon-close.svg" alt="close icon">
+      </div>  
+
+      <ul class="nav-items">
+        <li id="list-item" class="active"> <a href="./index.html"> 00 <em>Home</em> </a></li>
+        <li id="list-item"> <a href="./destination.html"> 01 <em>Destination</em>         </a></li>
+        <li id="list-item"> <a href="./crew.html"> 02 <em>Crew</em>                </a></li>
+        <li id="list-item"> <a href="./technology.html"> 03 <em>Technology</em>          </a></li>
+      </ul>
+
+    </section>
+
+
+    <!--div> home page code </div-->
+    <section class="page-dts">
+
+      <div class="dts">
+        <h2> So, you want to travel to </h2>
+        <h1> Space </h1>
+        <p>
+          Let’s face it; if you want to go to space, you might as well genuinely go to 
+          outer space and not hover kind of on the edge of it. Well sit back, and relax 
+          because we’ll give you a truly out of this world experience!
+        </p>
+      </div>
+
+      <div id="explore">
+        <h2> Explore </h2>
+      </div>
+
+    </section>
+    <!--div> home page code </div-->
+
+
+  </div>
+
+  
+<script>
+  // mobile and tablet naivgation button funtionality
+
+  const container = document.querySelector('.container');
+  const hamburger = document.getElementById('hamburger');
+  const closeBtn = document.getElementById('close-btn');
+  const navItems = document.querySelector('.nav-items');
+  const horizontaLine = document.getElementById('horizontal-line');
+
+  const pageDts = document.querySelector('.page-dts');
+
+
+  hamburger.addEventListener('click', e => {
+
+    hamburger.style.display = 'none';
+    closeBtn.style.display = 'block';
+
+    // display navigation menu
+    navItems.classList.add('open');
+
+    // remove scroll from display when navigation is on display
+
+    horizontaLine.classList.add('show');
+    pageDts.classList.add('closed');
+
+  
+
+
+  if(closeBtn.style.display === 'block') {
+
+    closeBtn.addEventListener('click', e=> {
+      closeBtn.style.display = 'none';
+      navItems.classList.remove('open');
+      hamburger.style.display = 'block';
+
+      container.style.height = 'auto';
+      horizontaLine.classList.remove('show');
+      pageDts.classList.remove('closed');
+
+      //location.reload();
+
+    })
+
+
+  }
+
+})
+</script>
+
+
+</body>
+</html>
